@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل الحرفيين - تونس</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-800 text-xl font-bold">دليل الحرفيين</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="px-3 py-2 text-gray-600 hover:text-blue-600">البحث</a>
+                    <a href="#" class="px-3 py-2 text-gray-600 hover:text-blue-600">التسجيل</a>
+                    <a href="#" class="px-3 py-2 text-gray-600 hover:text-blue-600">الاتصال</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-blue-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">ابحث عن الحرفي المثالي</h1>
+            <p class="text-xl">تصفح بين آلاف الحرفيين المؤهلين في منطقتك</p>
+        </div>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">المدينة</label>
+                    <select class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-300">
+                        <option>جميع المدن</option>
+                        <option>تونس</option>
+                        <option>صفاقس</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 mb-2">الحرفة</label>
+                    <select class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-300">
+                        <option>جميع الحرف</option>
+                        <option>البناء</option>
+                        <option>النجارة</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-end">
+                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+                        بحث
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Craftsmen Grid -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Artisan Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="relative h-48">
+                    <img src="https://via.placeholder.com/400x300" 
+                         class="w-full h-full object-cover"
+                         alt="حرفي بناء">
+                    <div class="absolute top-2 left-2 bg-white/80 px-3 py-1 rounded-full text-sm">
+                        <i class="fas fa-star text-yellow-400"></i> 4.5
+                    </div>
+                </div>
+                
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">علي بن صالح</h3>
+                    <div class="flex items-center text-gray-600 mb-2">
+                        <i class="fas fa-map-marker-alt ml-2"></i>
+                        <span>تونس، تونس</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">البناء</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">التعمير</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                            عرض الملف
+                        </button>
+                        <button class="text-gray-600 hover:text-red-500">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat similar cards -->
+            <!-- Add more artisan cards here -->
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="flex justify-center gap-2">
+            <button class="px-4 py-2 bg-white border rounded-lg hover:bg-gray-50">1</button>
+            <button class="px-4 py-2 bg-white border rounded-lg hover:bg-gray-50">2</button>
+            <button class="px-4 py-2 bg-white border rounded-lg hover:bg-gray-50">→</button>
+        </div>
+    </div>
+    
+    <!-- Chat Bot -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <div class="chat-container w-80 h-96 bg-white border-2 border-gray-300 rounded-lg shadow-lg p-4 hidden" id="chatBox">
+            <div class="chat-header flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold text-gray-800">مساعد افتراضي</h3>
+                <button onclick="toggleChat()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages overflow-auto h-60 space-y-2 mb-4" id="chatMessages">
+                <div class="message bot-message bg-gray-100 p-2 rounded-lg">
+                    مرحبا! كيف يمكنني مساعدتك اليوم؟
+                </div>
+            </div>
+            <div class="chat-input flex items-center">
+                <input type="text" id="userInput" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="اكتب رسالتك هنا...">
+                <button onclick="sendMessage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    إرسال
+                </button>
+            </div>
+        </div>
+        <div class="chat-toggle bg-blue-500 text-white p-4 rounded-full shadow-lg cursor-pointer hover:bg-blue-600 transition-colors" onclick="toggleChat()">
+            <i class="fas fa-comment-dots text-2xl"></i>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        let isChatOpen = false;
+
+        // Toggle Chat Box visibility
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            isChatOpen = !isChatOpen;
+            chatBox.classList.toggle('hidden', !isChatOpen);
+        }
+
+        // Send message to the backend and simulate the bot response
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            if (userInput.value.trim() === '') return;
+
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message bg-blue-500 text-white p-2 rounded-lg';
+            userMessage.textContent = userInput.value;
+            chatMessages.appendChild(userMessage);
+
+            // Call API to get response from GPT-3
+            const response = await fetch('http://localhost:3000/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput.value })
+            });
+            
+            const data = await response.json();
+            const botMessage = document.createElement('div');
+            botMessage.className = 'message bot-message bg-gray-100 p-2 rounded-lg';
+            botMessage.textContent = data.reply;
+            chatMessages.appendChild(botMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            userInput.value = '';
+        }
+
+        // Trigger sending message when pressing Enter
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">عن الموقع</h4>
+                    <p class="text-gray-400">منصة رائدة لتوصيل الحرفيين بالعملاء</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">الشروط والأحكام</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">التواصل</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone ml-2"></i>
+                            <span>+216 12 345 678</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 دليل الحرفيين. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

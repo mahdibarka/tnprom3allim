@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم المشرف</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-blue-900 text-white p-5">
+            <h1 class="text-2xl font-bold mb-5">لوحة التحكم</h1>
+            <ul>
+                <li class="mb-3 p-2 hover:bg-blue-700 rounded"><i class='bx bx-home'></i> الرئيسية</li>
+                <li class="mb-3 p-2 hover:bg-blue-700 rounded"><i class='bx bx-user'></i> المستخدمون</li>
+                <li class="mb-3 p-2 hover:bg-blue-700 rounded"><i class='bx bx-cog'></i> الإعدادات</li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h2 class="text-2xl font-semibold mb-6">إدارة المستخدمين</h2>
+            
+            <div class="bg-white p-6 rounded shadow-md">
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-blue-700 text-white">
+                            <th class="p-3 border">#</th>
+                            <th class="p-3 border">الاسم</th>
+                            <th class="p-3 border">البريد الإلكتروني</th>
+                            <th class="p-3 border">الدور</th>
+                            <th class="p-3 border">الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-100 text-center">
+                            <td class="p-3 border">1</td>
+                            <td class="p-3 border">محمد أحمد</td>
+                            <td class="p-3 border">mohamed@example.com</td>
+                            <td class="p-3 border">مشرف</td>
+                            <td class="p-3 border">
+                                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700" onclick="deleteUser()">حذف</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function deleteUser() {
+            if (confirm("هل أنت متأكد من حذف هذا المستخدم؟")) {
+                alert("تم حذف المستخدم بنجاح");
+            }
+        }
+    </script>
+</body>
+</html>
